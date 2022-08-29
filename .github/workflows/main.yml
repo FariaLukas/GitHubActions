@@ -1,8 +1,12 @@
-name: Actions 😎
+name: Actions 
 
 on: 
-  schedule:
-    - cron: '5 * * * *'
+ workflow_dispatch: {}
+ push:
+   branches:
+   - release/**
+ schedule:
+    - cron: '30 9,21 * * *'
   
 jobs:
           

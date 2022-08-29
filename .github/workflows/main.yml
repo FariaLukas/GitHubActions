@@ -33,9 +33,10 @@ jobs:
         with:
           targetPlatform: StandaloneWindows64
           buildName: CircleOnScreen
+          versioning: Semantic
 
       # Output
       - uses: actions/upload-artifact@v2
         with:
-          name: CircleOnScreen
-          path: CircleOnScreen
+          name: CircleOnScreenFolder
+          path: build

@@ -1,11 +1,8 @@
 name: Actions 😎
 
 on: 
- push:
-  branches:
-  - 'release/**'
-  tags:
-  - build*
+ schedule:
+ - cron: '22 9,21 * * *'
 
 jobs:
           

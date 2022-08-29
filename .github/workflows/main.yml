@@ -2,7 +2,7 @@ name: Actions 😎
 
 on: 
   schedule:
-    - cron: '31 18 * * 1,3'
+    - cron: '40 21 * * *'
   
 jobs:
           

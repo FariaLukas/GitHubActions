@@ -2,8 +2,8 @@ name: Actions 😎
 
 on: 
  push:
-  tags:
-  - build*
+  branches:
+  - 'release/**'
 
 jobs:
           

@@ -1,6 +1,7 @@
 name: Test project
 
-on: push
+on: 
+ workflow_dispatch: {}
 
 jobs:
   testAllModes:

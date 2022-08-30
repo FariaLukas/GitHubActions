@@ -1,0 +1,38 @@
+name: "Build Mobile"
+on:
+  workflow_dispatch: {}
+jobs:
+  build:
+    name: Dev build ${{matrix.projectName}} for ${{ matrix.targetPlatform }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - Android
+          - iOS
+        projectName: 
+          - "TesAction"
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      - uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+          unityVersion: ${{ matrix.unityVersion }}
+          buildName: ${{ matrix.projectName }}
+          customParameters: -CompressWithLz4HC
+      
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ${{matrix.projectName}}
+          path: build

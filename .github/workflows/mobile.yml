@@ -31,7 +31,6 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           buildName: ${{ matrix.projectName }}
           customParameters: -CompressWithLz4HC
-          androidAppBundle: true
           androidKeystoreName: user.keystore
           androidKeystoreBase64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
           androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}

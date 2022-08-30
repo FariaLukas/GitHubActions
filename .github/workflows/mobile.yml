@@ -31,6 +31,11 @@ jobs:
           unityVersion: ${{ matrix.unityVersion }}
           buildName: ${{ matrix.projectName }}
           customParameters: -CompressWithLz4HC
+          androidAppBundle: true
+          androidKeystoreName: user.keystore
+          androidKeystorePass: ${{ secrets.ANDROID_KEYSTORE_PASS }}
+          androidKeyaliasName: ${{ secrets.ANDROID_KEYALIAS_NAME }}
+          androidKeyaliasPass: ${{ secrets.ANDROID_KEYALIAS_PASS }}
       
       - uses: actions/upload-artifact@v2
         with:

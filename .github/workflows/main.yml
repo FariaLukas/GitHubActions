@@ -24,8 +24,8 @@ jobs:
       # Cache
       - uses: actions/cache@v2
         with:
-          path: Library/itsplaytime
-          key: Library-
+          path: itsplaytime/Library
+          key: itsplaytime/Library-
 
       # Build
       - name: Build project

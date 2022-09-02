@@ -12,10 +12,9 @@ on:
 jobs:
           
  build:
-    name: Build my project ✨
+    name: Build my project
     runs-on: 
-     - self-hosted
-     - test-1
+     - ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -45,7 +44,6 @@ jobs:
           projectPath: ${{ matrix.projectPath }}
           targetPlatform: StandaloneWindows64
           buildName: CircleOnScreen
-          versioning: Semantic
 
       # Output
       - uses: actions/upload-artifact@v2

@@ -5,9 +5,9 @@ on:
  push:
    branches:
    - release/**
- schedule:
-    - cron: '30 9,21 * * *'
-    - cron: '0 16 * * *'
+# schedule:
+#    - cron: '30 9,21 * * *'
+#    - cron: '0 16 * * *'
   
 jobs:
           

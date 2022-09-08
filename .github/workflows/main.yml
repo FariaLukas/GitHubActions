@@ -2,9 +2,9 @@ name: Actions
 
 on: 
  workflow_dispatch: {}
- push:
-   branches:
-   - release/**
+# push:
+#   branches:
+#   - release/**
 # schedule:
 #    - cron: '30 9,21 * * *'
 #    - cron: '0 16 * * *'
